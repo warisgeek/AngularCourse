@@ -1,0 +1,99 @@
+<div class="card">
+    <h5 class="card-header bg-primary"> Student</h5>
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="Type to search student">
+            </div>
+            <div class="col-lg-6">
+
+                <button class="btn btn-info float-right" (click)="onAddNewStudent()">Add New Student</button>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>#</th>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Class</th>
+                <th>Action</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let data of students;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{data.RollNumber}}</td>
+                    <td style="width: 20%">{{data.Name}}</td>
+                    <td style="width: 20%">{{data.Email}}</td>
+                    <td style="width: 20%">{{data.Mobile}}</td>
+                    <td>{{data.Class}}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm mr-1" (click)="onEdit(data,i)">Edit</button>
+                        <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr/>
+        <div [hidden]="!isEdit">
+            <div class="row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="row form-group">
+                        <div class="col-lg-2">
+                            <label>Roll No</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control" [(ngModel)]="student.RollNumber">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-2">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control" [(ngModel)]="student.Name">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-2">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <input class="form-control" [(ngModel)]="student.Email">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2">
+                            <label>Mobile</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control" [(ngModel)]="student.Mobile">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-2">
+                            <label>Class</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control" [(ngModel)]="student.Class">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-7 text-center">
+                            <button class="btn btn-info mr-2" (click)="onSave()">Save</button>
+                            <button class="btn btn-danger" (click)="onHideEdit()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
