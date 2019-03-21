@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header bg-primary"> Student</h5>
+    <h5 class="card-header bg-primary" appUnderline [appColor]="'red'"> Student</h5>
     <div class="card-body">
         <div class="row mb-2">
             <div class="col-lg-6">
@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-6">
 
-                <button class="btn btn-info float-right" (click)="onAddNewStudent()">Add New Student</button>
+                <button class="btn btn-info float-right" (click)="onAddNewStudent()" appUnderline>Add New Student</button>
             </div>
         </div>
         <table class="table table-hover">
@@ -21,13 +21,13 @@
                 <th>Action</th>
             </tr>
             <tbody>
-                <tr *ngFor="let data of students;let i=index">
+                <tr *ngFor="let data of students;let i=index;">
                     <td>{{i+1}}</td>
                     <td>{{data.RollNumber}}</td>
                     <td style="width: 20%">{{data.Name}}</td>
                     <td style="width: 20%">{{data.Email}}</td>
                     <td style="width: 20%">{{data.Mobile}}</td>
-                    <td>{{data.Class}}</td>
+                    <td>{{data.Class}} </td>
                     <td>
                         <button class="btn btn-info btn-sm mr-1" (click)="onEdit(data,i)">Edit</button>
                         <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
@@ -37,7 +37,7 @@
         </table>
 
         <hr/>
-        <div [hidden]="!isEdit">
+        <div *ngIf="isEdit">
             <div class="row">
                 <div class="col-lg-4">
 
@@ -48,7 +48,7 @@
                             <label>Roll No</label>
                         </div>
                         <div class="col-lg-6">
-                            <input class="form-control" [(ngModel)]="student.RollNumber">
+                            <input class="form-control" disabled="" [(ngModel)]="student.RollNumber">
                         </div>
                     </div>
                     <div class="row form-group">

@@ -1,0 +1,25 @@
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Class</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let data of students;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{data.RollNumber}}</td>
+            <td style="width: 20%">{{data.Name}}</td>
+            <td style="width: 20%">{{data.Email}}</td>
+            <td style="width: 20%">{{data.Mobile}}</td>
+            <td>{{data.Class}}</td>
+            <td>
+                <button class="btn btn-info btn-sm mr-1" (click)="onEdit(data,i)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

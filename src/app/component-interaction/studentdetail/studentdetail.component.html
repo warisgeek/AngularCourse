@@ -1,0 +1,58 @@
+<div>
+    <div class="row">
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-8">
+            <div class="row form-group">
+                <div class="col-lg-2">
+                    <label>Roll No</label>
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" [(ngModel)]="student.RollNumber">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-2">
+                    <label>Name</label>
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" [(ngModel)]="student.Name">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-2">
+                    <label>Email</label>
+                </div>
+                <div class="col-lg-6 ">
+                    <input class="form-control" [(ngModel)]="student.Email">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-2">
+                    <label>Mobile</label>
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" [(ngModel)]="student.Mobile">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-2">
+                    <label>Class</label>
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" [(ngModel)]="student.Class">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-7 text-center">
+                    <button class="btn btn-info mr-2" (click)="onSave()">Save</button>
+                    <button class="btn btn-danger" (click)="onHideEdit()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

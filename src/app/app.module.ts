@@ -5,7 +5,12 @@ import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { BesantStudentComponent } from './besant-student/besant-student.component';
-import { BesantStudentDetailComponent } from './besant-student-detail/besant-student-detail.component';
+import { UnderlineDirective} from './directives/underline.directive';
+import { ColorDirective} from './directives/color.directive';
+import { StudentComponent } from './component-interaction/student/student.component';
+import { StudentlistComponent } from './component-interaction/studentlist/studentlist.component';
+import { StudentdetailComponent } from './component-interaction/studentdetail/studentdetail.component';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +18,11 @@ import { BesantStudentDetailComponent } from './besant-student-detail/besant-stu
     StudentsComponent,
     StudentDetailComponent,
     BesantStudentComponent,
-    BesantStudentDetailComponent
+    StudentComponent,
+    StudentlistComponent,
+    StudentdetailComponent,
+    UnderlineDirective,
+    ColorDirective
   ],
   imports: [
     BrowserModule,

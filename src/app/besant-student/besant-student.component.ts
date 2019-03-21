@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BesantStudentComponent implements OnInit {
   students = [];
+  color = 'blue';
   isEdit = false;
   student: any = { Name: '', RollNumber: '', Email: '', Class: '', Mobile: '' };
   studentIndex = '';
@@ -15,7 +16,7 @@ export class BesantStudentComponent implements OnInit {
 
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
-    this.students = [{ Name: 'Waris', RollNumber: '001', Email: 'w@gmail.com', Class: 'Angular', Mobile: '088778' }, { Name: 'Damin', RollNumber: '002', Email: 'd@gmail.com', Class: 'Angular 7', Mobile: '987723283' }, { Name: 'Gunjan', RollNumber: '003', Email: 'g@gmail.com', Class: 'Angular 6 & & 7', Mobile: '97798343' }];
+    this.students = [{ Name: 'Waris', RollNumber: '001', Email: 'w@gmail.com', Class: 'Angular', Mobile: '088778' }, { Name: 'Damin', RollNumber: '002', Email: 'd@gmail.com', Class: 'Angular 7', Mobile: '987723283' }, { Name: 'admin', RollNumber: '003', Email: 'w@gmail.com', Class: 'Angular', Mobile: '088778' }, { Name: 'Gunjan', RollNumber: '004', Email: 'g@gmail.com', Class: 'Angular 6 & & 7', Mobile: '97798343' }];
   }
   onEdit(data: { RollNumber: any; Name: any; Email: any; Mobile: any; Class: any; }, index: string) {
     this.saveType = 'Edit';
@@ -38,7 +39,11 @@ export class BesantStudentComponent implements OnInit {
     }
   }
   onAddNewStudent() {
+    this.color = 'red';
     this.saveType = 'Add';
+    let roll = this.students.length;
+    roll++;
+    this.student.RollNumber = '00' + roll;
     this.isEdit = true;
   }
   onSave() {
