@@ -1,6 +1,16 @@
-# StudentTest
+# Angular Course
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+
+## Prerequisites
+
+Node.js and npm are essential to Angular development.
+
+## Clone or Download
+
+``` git clone https://github.com/warisgeek/AngularCourse ```
+
+Then go to AngularCourse  folder and run npm install
 
 ## Development server
 
