@@ -10,9 +10,9 @@
                 <button class="btn btn-info float-right" (click)="onAddNewStudent()">Add New Student</button>
             </div>
         </div>
-        <app-studentlist (edit)="onEdit($event)" []></app-studentlist>
+        <app-studentlist (edit)="onEdit($event)"></app-studentlist>
 
         <hr/>
-        <app-studentdetail *ngIf="isEdit" [student]="student" (save)="onSave($event)"></app-studentdetail>
+        <app-studentdetail *ngIf="isEdit" [student]="student" (hide)="onHide()" (save)="onSave($event)"></app-studentdetail>
     </div>
 </div>

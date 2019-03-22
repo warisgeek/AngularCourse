@@ -7,9 +7,15 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { BesantStudentComponent } from './besant-student/besant-student.component';
 import { UnderlineDirective} from './directives/underline.directive';
 import { ColorDirective} from './directives/color.directive';
+import { HiddenDirective} from './directives/hidden.directive';
 import { StudentComponent } from './component-interaction/student/student.component';
 import { StudentlistComponent } from './component-interaction/studentlist/studentlist.component';
 import { StudentdetailComponent } from './component-interaction/studentdetail/studentdetail.component';
+
+import { OrderbyPipe } from './pipes/orderby.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ParentComponent } from './component-interaction/parent/parent.component';
+import { ChildComponent } from './component-interaction/child/child.component';
 
 
 @NgModule({
@@ -22,7 +28,15 @@ import { StudentdetailComponent } from './component-interaction/studentdetail/st
     StudentlistComponent,
     StudentdetailComponent,
     UnderlineDirective,
-    ColorDirective
+    ColorDirective,
+    HiddenDirective,
+    OrderbyPipe,
+
+    FilterPipe,
+
+    ParentComponent,
+
+    ChildComponent
   ],
   imports: [
     BrowserModule,

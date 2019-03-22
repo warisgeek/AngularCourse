@@ -11,6 +11,7 @@ export class BesantStudentComponent implements OnInit {
   isEdit = false;
   student: any = { Name: '', RollNumber: '', Email: '', Class: '', Mobile: '' };
   studentIndex = '';
+  search='';
   saveType = '';
   constructor() { }
 
@@ -27,6 +28,7 @@ export class BesantStudentComponent implements OnInit {
     this.student.Mobile = data.Mobile;
     this.student.Class = data.Class;
     this.isEdit = true;
+    
   }
   onHideEdit() {
     this.saveType = '';

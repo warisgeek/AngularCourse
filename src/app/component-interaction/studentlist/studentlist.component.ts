@@ -26,12 +26,21 @@ export class StudentlistComponent implements OnInit {
     this.student.Class = data.Class;
     this.edit.emit(this.student);
   }
-  onSave() {
-    this.students[this.studentIndex].Name = this.student.Name;
-    this.students[this.studentIndex].RollNumber = this.student.RollNumber;
-    this.students[this.studentIndex].Email = this.student.Email;
-    this.students[this.studentIndex].Mobile = this.student.Mobile;
-    this.students[this.studentIndex].Class = this.student.Class;
-  }
 
+  onDelete(index: number) {
+    if (window.confirm('Are you sure want to delete the student?')) {
+      this.students.splice(index, 1);
+    }
+  }
+  onSave(data: any, type: any) {
+    if (type !== 'Add') {
+      this.students[this.studentIndex].Name = data.Name;
+      this.students[this.studentIndex].RollNumber = data.RollNumber;
+      this.students[this.studentIndex].Email = data.Email;
+      this.students[this.studentIndex].Mobile = data.Mobile;
+      this.students[this.studentIndex].Class = data.Class;
+      } else {
+        this.students.push(data);
+      }
+  }
 }

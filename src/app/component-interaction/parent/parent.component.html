@@ -1,0 +1,13 @@
+<div class="row">
+
+    <div class="col-lg-12">
+        <ul class="list-group">
+            <li class="list-group-item " (click)="onClick(data)" *ngFor="let data of students">{{data.Name}}</li>
+
+        </ul>
+    </div>
+</div>
+
+<app-child [childdata]="test" [childdata1]="test" [childdata2]="test" *ngIf="test">
+
+</app-child>
