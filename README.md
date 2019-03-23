@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
+See output https://warisgeek.github.io/AngularCourse/
+
 ## Prerequisites
 
 Node.js and npm are essential to Angular development.
