@@ -1,0 +1,83 @@
+<!-- <h1 [style.color]="color">Event Binding</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <button class="btn btn-primary" (click)="onClick($event)"> Click Me</button>
+    </div>
+    <div class="col-lg-12">
+
+        <button class="btn btn-primary mt-5" (mouseover)="onmouseover($event)"> Mouse Over</button>
+    </div>
+    <div class="col-lg-12">
+        <button class="btn btn-primary mt-5" (click)="changeColor($event)"> Change the color</button>
+    </div>
+    <div class="col-lg-12">
+        <input type="text" (keyup)="onKeyUp($event)" class="form-control mt-5">
+    </div>
+</div>
+
+<h2>Event Filtering Demo</h2>
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <input (keyup)="onPressEnter($event)" class="form-control mt-5" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <input (keyup.enter)="onPressEnter($event)" class="form-control mt-5" />
+    </div>
+</div>
+
+<h2>Ctrl+shift+c</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <input (keyup.control.shift.a)="combineKey()" class="form-control mt-5" />
+    </div>
+</div>
+
+<h1>Template Reference Variables</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="text" class="form-control mt-1" #firstNameInput>
+
+        <button (click)="show(firstNameInput.value)" class="btn btn-primary mt-1">Show</button>
+
+    </div>
+</div> -->
+
+
+<h1>Two Way Binding</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        Name <input type="text" class="form-control mt-1" [(ngModel)]="student.Name"> Mobile <input type="text" class="form-control mt-1" [(ngModel)]="student.Mobile">
+
+        <button (click)="addNew()" class="btn btn-primary mt-1">Add</button>
+
+
+    </div>
+
+    <!-- <div *ngFor="let data of list" class="col-lg-12">
+        {{data.Name}}/ {{data.Mobile}}
+    </div> -->
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let data of list">
+                <td>{{data.Name}}</td>
+                <td>{{data.Mobile}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
