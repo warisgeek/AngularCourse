@@ -1,20 +1,20 @@
 <div class="container-fluid">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Admin Portal</a>
+        <a class="navbar-brand" routerLink="dashbord">Admin Portal</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Student <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Teacher</a>
-                <a class="nav-item nav-link" href="#">Parents</a>
+                <a class="nav-item nav-link active" routerLink="dashbord">Dashbaord <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" routerLink="student">Student</a>
+                <a class="nav-item nav-link" routerLink="signup">Signup</a>
                 <a class="nav-item nav-link disabled" href="#">Close</a>
 
             </div>
         </div>
-        <a class="navbar-brand float-right" href="#">
+        <a class="navbar-brand float-right" routerLink="login">
             <i class="fas fa-user"></i> {{loggedUser}}
         </a>
     </nav>
@@ -23,10 +23,15 @@
         <div class="col-12">
             <!-- <app-besant-student></app-besant-student> -->
             <!-- Component Interaction -->
-            <app-student></app-student>
+            <!-- <app-student></app-student> -->
             <!-- <app-parent></app-parent> -->
 
             <!-- <app-studentlist></app-studentlist> -->
+
+            <router-outlet>
+
+            </router-outlet>
+
         </div>
     </div>
 </div>

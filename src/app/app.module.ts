@@ -16,7 +16,19 @@ import { OrderbyPipe } from './pipes/orderby.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ParentComponent } from './component-interaction/parent/parent.component';
 import { ChildComponent } from './component-interaction/child/child.component';
+import { LoginComponent } from './routing/login/login.component';
+import { SignupComponent } from './routing/signup/signup.component';
+import { DashbordComponent } from './routing/dashbord/dashbord.component';
+import { Routes, RouterModule } from '@angular/router';
 
+const route: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'dashbord', component: DashbordComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'student', component: BesantStudentComponent}
+
+];
 
 @NgModule({
   declarations: [
@@ -31,16 +43,17 @@ import { ChildComponent } from './component-interaction/child/child.component';
     ColorDirective,
     HiddenDirective,
     OrderbyPipe,
-
     FilterPipe,
-
     ParentComponent,
-
-    ChildComponent
+    ChildComponent,
+    LoginComponent,
+    SignupComponent,
+    DashbordComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]
