@@ -21,6 +21,8 @@ import { SignupComponent } from './routing/signup/signup.component';
 import { DashbordComponent } from './routing/dashbord/dashbord.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import { DateService} from './date.service';
+
 const route: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
@@ -55,7 +57,7 @@ const route: Routes = [
     FormsModule,
     RouterModule.forRoot(route)
   ],
-  providers: [],
+  providers: [DateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
