@@ -1,0 +1,60 @@
+<div class="row">
+
+    <!-- <div class="col-lg-12">
+        <div class="form-group">
+            User Name
+            <input type="text" class="form-control" [formControl]="name">
+        </div>
+        <div class="form-group">
+            Password
+            <input type="text" class="form-control" [formControl]="password">
+        </div>
+        <button class="btn btn-primary" (click)="save()">Submit</button>
+    </div> -->
+    <div class="col-lg-12">
+
+
+        <form [formGroup]="myForm" (ngSubmit)="save()">
+            <div class="form-group">
+                Name<span class="text-danger">*</span>
+                <input type="text" class="form-control" [ngClass]="(myForm.controls.name.invalid&&(myForm.controls.name.touched||myForm.controls.name.darty)==true?'is-invalid':'')" formControlName="name">
+                <div *ngIf="myForm.controls.name.invalid&&(myForm.controls.name.touched||myForm.controls.name.darty)">
+                    <div class="text-danger" *ngIf="myForm.controls.name.errors.required">
+                        Name is required
+                    </div>
+                    <div class="text-danger" *ngIf="myForm.controls.name.errors.minlength">
+                        Name min length 5
+                    </div>
+                    <div class="text-danger" *ngIf="myForm.controls.name.errors.maxlength">
+                        Name max length 10
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                Email
+                <input type="text" class="form-control" [ngClass]="(myForm.controls.email.invalid&&(myForm.controls.email.touched||myForm.controls.email.darty)==true?'is-invalid':'')" formControlName="email">
+                <div *ngIf="myForm.controls.email.invalid&&(myForm.controls.email.touched||myForm.controls.email.darty)">
+                    <div class="text-danger" *ngIf="myForm.controls.email.errors.required">
+                        Email is required
+                    </div>
+                    <div class="text-danger" *ngIf="myForm.controls.email.errors.email">
+                        Please fill the correct email
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                Mobile
+                <input type="text" class="form-control" formControlName="mobile">
+            </div>
+            <div class="form-group">
+                Age
+                <input type="text" class="form-control" formControlName="age">
+            </div>
+
+
+            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">Save</button>
+            <!-- 
+        <button class="btn btn-primary" [disabled]="myForm.invalid" (click)="save()">Submit</button> -->
+        </form>
+    </div>
+</div>
