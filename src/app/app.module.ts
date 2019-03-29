@@ -23,6 +23,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DateService} from './date.service';
 import { ReactiveformComponent } from './forms/reactiveform/reactiveform.component';
+import { TemplateFormComponent } from './forms/template-form/template-form.component';
 
 const route: Routes = [
   {path: 'login', component: LoginComponent},
@@ -30,7 +31,8 @@ const route: Routes = [
   {path: 'dashbord', component: DashbordComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'student', component: BesantStudentComponent},
-  {path: 'form', component: ReactiveformComponent}
+  {path: 'form', component: ReactiveformComponent},
+  {path: 'form1', component: TemplateFormComponent}
 
 ];
 
@@ -53,7 +55,8 @@ const route: Routes = [
     LoginComponent,
     SignupComponent,
     DashbordComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
