@@ -1,13 +1,28 @@
 <div class="row">
-
     <div class="col-lg-12">
-        <ul class="list-group">
-            <li class="list-group-item " (click)="onClick(data)" *ngFor="let data of students">{{data.Name}}</li>
+        Name <input type="text" class="form-control mt-1" [(ngModel)]="student.Name"> Mobile <input type="text" class="form-control mt-1" [(ngModel)]="student.Mobile">
 
-        </ul>
+        <button (click)="addNew()" class="btn btn-primary mt-1">Add</button>
+
+
     </div>
 </div>
 
-<app-child [childdata]="test" [childdata1]="test" [childdata2]="test" *ngIf="test">
+<table class="table" *ngIf="list.length>0">
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let data of list; let i =index">
+            <td>{{data.Name}}</td>
+            <td>{{data.Mobile}}</td>
+            <td>
+                <button class="btn btn-sm btn-primary" (click)="onEdit(data,i)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-</app-child>
+<app-child [student]="currentStudent" (update)="onUpdated($event)" *ngIf="currentStudent.Name.length>0"></app-child>
